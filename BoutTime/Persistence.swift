@@ -14,8 +14,14 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newPriority = PriorityItem(context: viewContext)
+            
+            newPriority.priorityCreatedDate     = Date.now
+            newPriority.priorityFinishedDate    = Date.now
+            newPriority.priorityIsChecked       = false
+            newPriority.priorityPoint           = Int32(10)
+            newPriority.priorityTitle           = "Harus makan"
+            newPriority.priorityUrgencyLevel    = "High"
         }
         do {
             try viewContext.save()

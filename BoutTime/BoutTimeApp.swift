@@ -13,8 +13,16 @@ struct BoutTimeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TabView {
+                PrioritiesScreen()
+                    .tabItem {
+                        Label("Prioritas", systemImage: "list.bullet")
+                    }.environment(\.managedObjectContext, persistenceController.container.viewContext)
+                PointScreen()
+                    .tabItem {
+                        Label("Poin", systemImage: "checkmark.seal.fill")
+                    }
+            }
         }
     }
 }
