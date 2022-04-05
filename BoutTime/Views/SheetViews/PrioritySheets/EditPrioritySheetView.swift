@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct EditPrioritySheetView: View {
+    // CONTEXT AND PRESENTATION MODE
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
     
+    // PRIORITY ITEM
     var priorityItem: PriorityItem;
     
+    // URGENCY INDEX
     @State var urgencyLevelIndex: Int;
-   
-    // Sheets state
+    
+    // SHOW SHEET BINDING
     @Binding var showSheetView: Bool;
-
-    // User input variable state
+    
+    // VARIABLES
     @State var namaPrioritas: String;
     @State var tingkatUrgensi: String;
     @State var tanggalSelesai = Date.now;
@@ -60,7 +63,7 @@ struct EditPrioritySheetView: View {
                             }
                         }.onChange(of: tingkatUrgensi) {
                             tag in
-                                stepperCountRestrictions(tag)
+                            stepperCountRestrictions(tag)
                         }
                         Stepper(value: $poinSelesai, in: priorityPoint[urgencyLevelIndex])
                         {
@@ -84,7 +87,6 @@ struct EditPrioritySheetView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
                         updatePriority()
-//                        showSheetView = false;
                         self.presentationMode.wrappedValue.dismiss()
                     }.disabled(namaPrioritas.trimmingLeadingAndTrailingSpaces().isEmpty)
                 }
@@ -92,7 +94,6 @@ struct EditPrioritySheetView: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
                         self.presentationMode.wrappedValue.dismiss()
-//                        showSheetView = false;
                     }
                 }
             }
@@ -102,21 +103,15 @@ struct EditPrioritySheetView: View {
     }
     
     func updatePriority() {
-            guard self.namaPrioritas != "" else {return}
-            
-            viewContext.performAndWait {
-                priorityItem.priorityFinishedDate    = tanggalSelesai
-                priorityItem.priorityIsChecked       = false
-                priorityItem.priorityPoint           = Int32(poinSelesai)
-                priorityItem.priorityTitle           = namaPrioritas
-                priorityItem.priorityUrgencyLevel    = tingkatUrgensi
-                try? viewContext.save()
-            }
+        guard self.namaPrioritas != "" else {return}
+        
+        viewContext.performAndWait {
+            priorityItem.priorityFinishedDate    = tanggalSelesai
+            priorityItem.priorityIsChecked       = false
+            priorityItem.priorityPoint           = Int32(poinSelesai)
+            priorityItem.priorityTitle           = namaPrioritas
+            priorityItem.priorityUrgencyLevel    = tingkatUrgensi
+            try? viewContext.save()
         }
+    }
 }
-
-//struct EditPrioritySheetView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditPrioritySheetView()
-//    }
-//}

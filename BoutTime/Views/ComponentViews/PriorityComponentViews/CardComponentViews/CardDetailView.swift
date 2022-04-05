@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct CardDetailView: View {
+    // VARIABLES
     public var priorityTitle: String;
     public var priorityDate: Date;
     public var priorityUrgencyLevel: String;
+    
+    // ISCHECKBINDING
     @Binding public var isChecked: Bool;
     
     public var body: some View {
@@ -18,7 +21,7 @@ struct CardDetailView: View {
             Text(priorityTitle)
                 .lineLimit(1)
                 .foregroundColor(isChecked == true ? .secondary : .primary)
-                .padding(.bottom, 0.1)
+                .padding(.bottom, 0.05)
             Text("\(priorityUrgencyLevel) - \(priorityDate, style: .date)")
                 .lineLimit(1)
                 .font(.caption)
@@ -26,9 +29,3 @@ struct CardDetailView: View {
         }
     }
 }
-
-//struct CardDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardDetailView()
-//    }
-//}

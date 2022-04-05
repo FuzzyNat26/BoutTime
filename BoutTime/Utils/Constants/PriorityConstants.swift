@@ -12,7 +12,8 @@ let daftarTingkatUrgensi = [
     "Low", //cyan
     "Medium", //kuning
     "High", //oren
-    "Really High"] //merah
+    "Really High" //merah
+]
 
 let priorityPoint = [
     1...2,

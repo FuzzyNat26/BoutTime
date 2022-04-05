@@ -8,22 +8,27 @@
 import SwiftUI
 
 struct CheckBoxView: View {
+    // CHECKBOX BINDING
     @Binding public var isChecked: Bool
     
+    // ENVIRONMENT CONTEXT : FOR UPDATING CHECKBOX
     @Environment(\.managedObjectContext) private var viewContext
     
+    // PRIOTITY OBJECT
     var priorityObject: PriorityItem;
     
+    // TOGGLE BUTTON
     private func toggle() {
         isChecked = !isChecked
         updateCheck()
     }
     
+    // UPDATE CHECK FUNCTION
     func updateCheck() {
-       viewContext.performAndWait {
-           priorityObject.priorityIsChecked = isChecked
-           try? viewContext.save()
-       }
+        viewContext.performAndWait {
+            priorityObject.priorityIsChecked = isChecked
+            try? viewContext.save()
+        }
     }
     
     var body: some View {
@@ -33,14 +38,14 @@ struct CheckBoxView: View {
                         isChecked
                       ? "checkmark.circle.fill"
                       : "circle")
-                    .foregroundColor(.red)
+                .resizable()
+                .foregroundColor(
+                    isChecked
+                    ? .red
+                    : .gray
+                )
+                .frame(width: 22, height: 22)
             }
         }
     }
 }
-
-//struct CheckBoxView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CheckBoxView()
-//    }
-//}

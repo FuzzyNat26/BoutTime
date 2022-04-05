@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct AddPrioritySheetView: View {
+    // CONTEXT AND PRESENTATION MODE
     @Environment(\.managedObjectContext) private var viewContext
     @Environment (\.presentationMode) var presentationMode
     
+    // INITIAL URGENCY INDEX
     @State var urgencyLevelIndex: Int = 0;
-   
-    // Sheets state
+    
+    // SHOW SHEET BINDING
     @Binding var showSheetView: Bool;
-
-    // User input variable state
+    
+    // VARIABLES
     @State var namaPrioritas: String = "";
     @State var tingkatUrgensi: String = daftarTingkatUrgensi[0];
     @State var tanggalSelesai = Date.now;
@@ -55,7 +57,7 @@ struct AddPrioritySheetView: View {
                             }
                         }.onChange(of: tingkatUrgensi) {
                             tag in
-                                stepperCountRestrictions(tag)
+                            stepperCountRestrictions(tag)
                         }
                         Stepper(value: $poinSelesai, in: priorityPoint[urgencyLevelIndex])
                         {
@@ -78,13 +80,13 @@ struct AddPrioritySheetView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
                         addPriority();
-                        showSheetView = false;
+                        self.presentationMode.wrappedValue.dismiss()
                     }.disabled(namaPrioritas.trimmingLeadingAndTrailingSpaces().isEmpty)
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        showSheetView = false;
+                        self.presentationMode.wrappedValue.dismiss()
                     }
                 }
             }
@@ -102,7 +104,7 @@ struct AddPrioritySheetView: View {
         newPriority.priorityTitle           = namaPrioritas
         newPriority.priorityUrgencyLevel    = tingkatUrgensi
         newPriority.priorityId = UUID()
-
+        
         do {
             try viewContext.save()
             print("Priorty saved.")
@@ -112,9 +114,3 @@ struct AddPrioritySheetView: View {
         }
     }
 }
-
-//struct AddPrioritySheetView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddPrioritySheetView()
-//    }
-//}

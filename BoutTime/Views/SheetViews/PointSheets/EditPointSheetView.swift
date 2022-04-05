@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct EditPointSheetView: View {
+    // SHOW SHEET BINDING
     @Binding var showSheetView: Bool;
     
-    @State var isChanged: Bool = false;
-    
+    // VARIABLES
     @State var nama: String;
     @State var selectedColorKey: Int;
     
+    // SAVE PAGE INFORMATION TO USER DEFAULTS
     func saveProfile() {
         UserDefaults.standard.set(nama, forKey: "UserName");
         UserDefaults.standard.set(selectedColorKey, forKey: "UserColorKey")
     }
-   
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -64,9 +65,3 @@ struct EditPointSheetView: View {
         }
     }
 }
-
-//struct EditPointSheetView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditPointSheetView()
-//    }
-//}

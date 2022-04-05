@@ -8,46 +8,42 @@
 import SwiftUI
 
 struct ListCardView: View {
-    // Environments
-    @Environment(\.editMode) private var editMode
     
+    // EDIT MODE VARIABLES
+    @Binding var isEdit: Bool;
+    
+    // PRIORITY OBJECT
     var priorityObject: PriorityItem
 
-    // Sheets
+    // SHEET
     @State public var showEditSheetView : Bool = false
     
-    // Card variables
-    public var priorityTitle: String;
-    public var priorityDate: Date;
-    public var priorityUrgencyLevel: String;
-    public var priorityPoints: Int;
-
-    // Card check states
+    // CARD CHECK STATE
     @State public var isChecked: Bool = false
     
     public var body: some View {
         HStack(alignment: .center) {
-            if editMode?.wrappedValue.isEditing != true {
+            if !isEdit {
                 withAnimation {
-                    CheckBoxView(isChecked: $isChecked, priorityObject: priorityObject).transition(.scale)
+                    CheckBoxView(isChecked: $isChecked, priorityObject: priorityObject)
+                        .transition(.scale)
                 }
             }
             
             CardDetailView(
-                priorityTitle: priorityTitle,
-                priorityDate: priorityDate,
-                priorityUrgencyLevel: priorityUrgencyLevel,
+                priorityTitle: priorityObject.priorityTitle!,
+                priorityDate: priorityObject.priorityFinishedDate!,
+                priorityUrgencyLevel: priorityObject.priorityUrgencyLevel!,
                 isChecked: $isChecked
             )
-//            .background(Color(UIColor.systemBackground))
             Spacer()
 
-            if editMode?.wrappedValue.isEditing == true {
+            if isEdit {
                 withAnimation {
                     Button(action: showEditSheet) {
                         Image(systemName: "info.circle")
                             .resizable()
-                            .frame(width: 20, height: 20)
+                            .frame(width: 22, height: 22)
                             .foregroundColor(.blue)
                             .transition(.scale)
                             .multilineTextAlignment(.trailing)
@@ -56,7 +52,7 @@ struct ListCardView: View {
                     }
                 }
             } else {
-                PointView(isChecked: $isChecked, priorityPoint: priorityPoints)
+                PointView(isChecked: $isChecked, priorityPoint: Int(priorityObject.priorityPoint))
                     .multilineTextAlignment(.trailing)
             }
             
@@ -67,10 +63,10 @@ struct ListCardView: View {
                 priorityItem: priorityObject,
                 urgencyLevelIndex: 0,
                 showSheetView: $showEditSheetView,
-                namaPrioritas: priorityTitle,
-                tingkatUrgensi: priorityUrgencyLevel,
-                tanggalSelesai: priorityDate,
-                poinSelesai: priorityPoints)
+                namaPrioritas: priorityObject.priorityTitle!,
+                tingkatUrgensi: priorityObject.priorityUrgencyLevel!,
+                tanggalSelesai: priorityObject.priorityFinishedDate!,
+                poinSelesai: Int(priorityObject.priorityPoint))
         }
         .padding(.vertical, 5.0)
         
@@ -80,9 +76,3 @@ struct ListCardView: View {
         showEditSheetView = true
     }
 }
-//
-//struct ListCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListCardView()
-//    }
-//}

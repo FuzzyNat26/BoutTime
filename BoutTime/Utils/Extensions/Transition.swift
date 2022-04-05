@@ -9,7 +9,6 @@ import SwiftUI
 
 extension AnyTransition {
     static var backSlide: AnyTransition {
-//        .move(edge: .trailing)
         AnyTransition.asymmetric(
             insertion: .move(edge: .trailing),
             removal: .move(edge: .leading)

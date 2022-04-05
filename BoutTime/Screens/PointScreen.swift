@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct PointScreen: View {
+    // APPSTORAGE
     @AppStorage("UserColorKey") var colorKey: Int = 0
     @AppStorage("UserName") var userName: String = "User"
     
+    // ICON NAME
     let iconName: String = "star.fill";
     
+    // VARIABLES
+    // TODO: BUAT INFORMASI SECARA INSTANT
     var totalSelesai: Int = 10;
     var totalBelumSelesai: Int = 9;
     var totalPoints: Int = 76;
     
+    // SHEET STATE
     @State var showEditSheetView: Bool = false;
     
     var body: some View {

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7C10CDCB27FAD42100E9C782 /* BoutTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDCA27FAD42100E9C782 /* BoutTimeApp.swift */; };
-		7C10CDCD27FAD42100E9C782 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDCC27FAD42100E9C782 /* ContentView.swift */; };
 		7C10CDCF27FAD42200E9C782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C10CDCE27FAD42200E9C782 /* Assets.xcassets */; };
 		7C10CDD227FAD42200E9C782 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C10CDD127FAD42200E9C782 /* Preview Assets.xcassets */; };
 		7C10CDD427FAD42200E9C782 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDD327FAD42200E9C782 /* Persistence.swift */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		7C10CDC727FAD42100E9C782 /* BoutTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C10CDCA27FAD42100E9C782 /* BoutTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutTimeApp.swift; sourceTree = "<group>"; };
-		7C10CDCC27FAD42100E9C782 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7C10CDCE27FAD42200E9C782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C10CDD127FAD42200E9C782 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7C10CDD327FAD42200E9C782 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 				7C10CDDE27FAD45000E9C782 /* Screens */,
 				7C10CDDD27FAD44A00E9C782 /* Utils */,
 				7C10CDCA27FAD42100E9C782 /* BoutTimeApp.swift */,
-				7C10CDCC27FAD42100E9C782 /* ContentView.swift */,
 				7C10CDCE27FAD42200E9C782 /* Assets.xcassets */,
 				7C10CDD327FAD42200E9C782 /* Persistence.swift */,
 				7C10CDD027FAD42200E9C782 /* Preview Content */,
@@ -366,7 +363,6 @@
 				7C9248D127FBFED800FFBA3F /* PrioritySortDescriptiors.swift in Sources */,
 				7C9248CF27FBECAC00FFBA3F /* Transition.swift in Sources */,
 				7C10CE2E27FB1C5C00E9C782 /* TrimString.swift in Sources */,
-				7C10CDCD27FAD42100E9C782 /* ContentView.swift in Sources */,
 				7C10CE0A27FAD79400E9C782 /* EditPointSheetView.swift in Sources */,
 				7C10CE2B27FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift in Sources */,
 				7C10CE1827FAD9F800E9C782 /* ListCardView.swift in Sources */,
