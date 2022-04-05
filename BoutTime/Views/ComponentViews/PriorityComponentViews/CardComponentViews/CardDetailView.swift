@@ -18,7 +18,9 @@ struct CardDetailView: View {
             Text(priorityTitle)
                 .lineLimit(1)
                 .foregroundColor(isChecked == true ? .secondary : .primary)
+                .padding(.bottom, 0.1)
             Text("\(priorityUrgencyLevel) - \(priorityDate, style: .date)")
+                .lineLimit(1)
                 .font(.caption)
                 .foregroundColor(Color.gray)
         }

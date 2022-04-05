@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct EditPrioritySheetView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment (\.presentationMode) var presentationMode
+    
+    var priorityItem: PriorityItem;
+    
     @State var urgencyLevelIndex: Int;
    
     // Sheets state
@@ -16,8 +21,6 @@ struct EditPrioritySheetView: View {
     // User input variable state
     @State var namaPrioritas: String;
     @State var tingkatUrgensi: String;
-    
-    
     @State var tanggalSelesai = Date.now;
     @State var poinSelesai: Int = 1;
     
@@ -80,13 +83,16 @@ struct EditPrioritySheetView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {
-                        
-                    }
+                        updatePriority()
+//                        showSheetView = false;
+                        self.presentationMode.wrappedValue.dismiss()
+                    }.disabled(namaPrioritas.trimmingLeadingAndTrailingSpaces().isEmpty)
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        showSheetView = false;
+                        self.presentationMode.wrappedValue.dismiss()
+//                        showSheetView = false;
                     }
                 }
             }
@@ -94,6 +100,19 @@ struct EditPrioritySheetView: View {
             stepperCountRestrictions(tingkatUrgensi, true)
         }
     }
+    
+    func updatePriority() {
+            guard self.namaPrioritas != "" else {return}
+            
+            viewContext.performAndWait {
+                priorityItem.priorityFinishedDate    = tanggalSelesai
+                priorityItem.priorityIsChecked       = false
+                priorityItem.priorityPoint           = Int32(poinSelesai)
+                priorityItem.priorityTitle           = namaPrioritas
+                priorityItem.priorityUrgencyLevel    = tingkatUrgensi
+                try? viewContext.save()
+            }
+        }
 }
 
 //struct EditPrioritySheetView_Previews: PreviewProvider {

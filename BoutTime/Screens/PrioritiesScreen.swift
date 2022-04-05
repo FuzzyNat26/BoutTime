@@ -17,9 +17,9 @@ struct PrioritiesScreen: View {
                 FinishedView()
             }
             .toolbar {
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    EditButton()
-//                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
                 ToolbarItem {
                     Button(action: {
                         showAddSheetView = true;

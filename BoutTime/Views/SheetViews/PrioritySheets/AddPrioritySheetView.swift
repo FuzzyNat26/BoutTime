@@ -79,7 +79,7 @@ struct AddPrioritySheetView: View {
                     Button("Add") {
                         addPriority();
                         showSheetView = false;
-                    }.disabled(namaPrioritas.isEmpty)
+                    }.disabled(namaPrioritas.trimmingLeadingAndTrailingSpaces().isEmpty)
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {

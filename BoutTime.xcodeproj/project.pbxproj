@@ -17,7 +17,6 @@
 		7C10CDF127FAD65E00E9C782 /* PriorityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDF027FAD65E00E9C782 /* PriorityConstants.swift */; };
 		7C10CDF327FAD66E00E9C782 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDF227FAD66E00E9C782 /* ColorConstants.swift */; };
 		7C10CDF527FAD6A700E9C782 /* ClearTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDF427FAD6A700E9C782 /* ClearTextField.swift */; };
-		7C10CDF727FAD6D200E9C782 /* StepperRestrictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDF627FAD6D200E9C782 /* StepperRestrictions.swift */; };
 		7C10CDFC27FAD72200E9C782 /* PointScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDFB27FAD72200E9C782 /* PointScreen.swift */; };
 		7C10CDFE27FAD73700E9C782 /* PrioritiesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDFD27FAD73700E9C782 /* PrioritiesScreen.swift */; };
 		7C10CE0027FAD75000E9C782 /* AddPrioritySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDFF27FAD75000E9C782 /* AddPrioritySheetView.swift */; };
@@ -33,6 +32,9 @@
 		7C10CE1D27FADA2E00E9C782 /* FinishedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE1C27FADA2E00E9C782 /* FinishedView.swift */; };
 		7C10CE2A27FAFA7F00E9C782 /* PriorityItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2827FAFA7F00E9C782 /* PriorityItem+CoreDataClass.swift */; };
 		7C10CE2B27FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2927FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift */; };
+		7C10CE2E27FB1C5C00E9C782 /* TrimString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2D27FB1C5C00E9C782 /* TrimString.swift */; };
+		7C9248CF27FBECAC00FFBA3F /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248CE27FBECAC00FFBA3F /* Transition.swift */; };
+		7C9248D127FBFED800FFBA3F /* PrioritySortDescriptiors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,6 @@
 		7C10CDF027FAD65E00E9C782 /* PriorityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityConstants.swift; sourceTree = "<group>"; };
 		7C10CDF227FAD66E00E9C782 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		7C10CDF427FAD6A700E9C782 /* ClearTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearTextField.swift; sourceTree = "<group>"; };
-		7C10CDF627FAD6D200E9C782 /* StepperRestrictions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperRestrictions.swift; sourceTree = "<group>"; };
 		7C10CDFB27FAD72200E9C782 /* PointScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointScreen.swift; sourceTree = "<group>"; };
 		7C10CDFD27FAD73700E9C782 /* PrioritiesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritiesScreen.swift; sourceTree = "<group>"; };
 		7C10CDFF27FAD75000E9C782 /* AddPrioritySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPrioritySheetView.swift; sourceTree = "<group>"; };
@@ -63,6 +64,9 @@
 		7C10CE1C27FADA2E00E9C782 /* FinishedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedView.swift; sourceTree = "<group>"; };
 		7C10CE2827FAFA7F00E9C782 /* PriorityItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriorityItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7C10CE2927FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriorityItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7C10CE2D27FB1C5C00E9C782 /* TrimString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimString.swift; sourceTree = "<group>"; };
+		7C9248CE27FBECAC00FFBA3F /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritySortDescriptiors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +124,7 @@
 		7C10CDDD27FAD44A00E9C782 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				7C10CDE527FAD49900E9C782 /* Others */,
+				7C10CE2C27FB1C5000E9C782 /* Extensions */,
 				7C10CDE427FAD48500E9C782 /* Formatters */,
 				7C10CDE227FAD47800E9C782 /* Constants */,
 				7C10CDE027FAD46B00E9C782 /* Modifiers */,
@@ -159,6 +163,7 @@
 			children = (
 				7C10CDF027FAD65E00E9C782 /* PriorityConstants.swift */,
 				7C10CDF227FAD66E00E9C782 /* ColorConstants.swift */,
+				7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -169,14 +174,6 @@
 				7C10CDEE27FAD62D00E9C782 /* NumberFormatter.swift */,
 			);
 			path = Formatters;
-			sourceTree = "<group>";
-		};
-		7C10CDE527FAD49900E9C782 /* Others */ = {
-			isa = PBXGroup;
-			children = (
-				7C10CDF627FAD6D200E9C782 /* StepperRestrictions.swift */,
-			);
-			path = Others;
 			sourceTree = "<group>";
 		};
 		7C10CDE627FAD4B000E9C782 /* SheetViews */ = {
@@ -277,6 +274,15 @@
 			path = PriorityEntity;
 			sourceTree = "<group>";
 		};
+		7C10CE2C27FB1C5000E9C782 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C10CE2D27FB1C5C00E9C782 /* TrimString.swift */,
+				7C9248CE27FBECAC00FFBA3F /* Transition.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,6 +363,9 @@
 				7C10CE0027FAD75000E9C782 /* AddPrioritySheetView.swift in Sources */,
 				7C10CDFE27FAD73700E9C782 /* PrioritiesScreen.swift in Sources */,
 				7C10CE1627FAD96500E9C782 /* PointView.swift in Sources */,
+				7C9248D127FBFED800FFBA3F /* PrioritySortDescriptiors.swift in Sources */,
+				7C9248CF27FBECAC00FFBA3F /* Transition.swift in Sources */,
+				7C10CE2E27FB1C5C00E9C782 /* TrimString.swift in Sources */,
 				7C10CDCD27FAD42100E9C782 /* ContentView.swift in Sources */,
 				7C10CE0A27FAD79400E9C782 /* EditPointSheetView.swift in Sources */,
 				7C10CE2B27FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift in Sources */,
@@ -369,7 +378,6 @@
 				7C10CDFC27FAD72200E9C782 /* PointScreen.swift in Sources */,
 				7C10CE0F27FAD8A100E9C782 /* ColorCircle.swift in Sources */,
 				7C10CE1B27FADA2300E9C782 /* OnProgressView.swift in Sources */,
-				7C10CDF727FAD6D200E9C782 /* StepperRestrictions.swift in Sources */,
 				7C10CE0C27FAD87C00E9C782 /* ColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

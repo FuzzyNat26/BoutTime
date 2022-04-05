@@ -10,14 +10,30 @@ import SwiftUI
 struct CheckBoxView: View {
     @Binding public var isChecked: Bool
     
-    private func toggle(){
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    var priorityObject: PriorityItem;
+    
+    private func toggle() {
         isChecked = !isChecked
+        updateCheck()
     }
     
-    public var body: some View {
+    func updateCheck() {
+       viewContext.performAndWait {
+           priorityObject.priorityIsChecked = isChecked
+           try? viewContext.save()
+       }
+    }
+    
+    var body: some View {
         Button(action: toggle){
             HStack{
-                Image(systemName: isChecked ? "checkmark.square": "square")
+                Image(systemName:
+                        isChecked
+                      ? "checkmark.circle.fill"
+                      : "circle")
+                    .foregroundColor(.red)
             }
         }
     }

@@ -8,53 +8,45 @@
 import SwiftUI
 
 struct OnProgressView: View {
-    //    @Environment(\.managedObjectContext) var context
-    //    @FetchRequest(entity: Priorities.entity(), sortDescriptors: []) var priorities: FetchedResults<Priorities>
-   
-    @Environment(\.managedObjectContext) private var viewContext
-
+    @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(
         entity: PriorityItem.entity(),
-        sortDescriptors: [],
+        sortDescriptors: prioritySortDescriptors,
         predicate: NSPredicate(format: "priorityIsChecked == false"),
         animation: .default)
     
     private var priorities: FetchedResults<PriorityItem>
     
-    
-//    private func populatePriorities() {
-//        priorities = coreDM.getAllPriorities()
-//    }
-    
     var body: some View {
-        Section(header: Text("Sedang Dikerjakan").font(.headline)) {
-            Group {
-                ForEach(priorities, id: \.self) {
-                    priority in
-                    ListCardView(
-                        priorityTitle: priority.priorityTitle!,
-                        priorityDate: priority.priorityFinishedDate!,
-                        priorityUrgencyLevel: priority.priorityUrgencyLevel!,
-                        priorityPoints: Int(priority.priorityPoint),
-                        isChecked: priority.priorityIsChecked
-                    )
-                }
-//                .onDelete(perform: deleteItems)
-                .swipeActions(edge: .leading) {
-                    Button("Edit") {
-                        print("Edit")
+//        if(!priorities.isEmpty) {
+            Section(header: Text("Sedang Dikerjakan").font(.headline)) {
+                Group {
+                    ForEach(priorities, id: \.self) {
+                        priority in
+                        ListCardView(
+                            priorityObject: priority,
+                            priorityTitle: priority.priorityTitle!,
+                            priorityDate: priority.priorityFinishedDate!,
+                            priorityUrgencyLevel: priority.priorityUrgencyLevel!,
+                            priorityPoints: Int(priority.priorityPoint),
+                            isChecked: priority.priorityIsChecked
+                        )
                     }
-                }
-                    .swipeActions(edge: .trailing) {
-                    Button("Delete a6") {
-                        deleteItems(offsets: IndexSet.Type)
-                    }
+                  .onDelete(perform: deletePriorities)
+//                    .swipeActions(edge: .trailing) {
+//                        Button("Delete a6") {
+//                            // deleteItems(offsets: IndexSet.Type)
+//                            print("Hlelo")
+//                        }.tint(.red)
+//                        Button("Delete") {
+//                        }
+//                    }
                 }
             }
-        }
+//        }
     }
     
-    private func deleteItems(offsets: IndexSet) {
+    private func deletePriorities(offsets: IndexSet) {
         withAnimation {
             offsets.map { priorities[$0] }.forEach(viewContext.delete)
 

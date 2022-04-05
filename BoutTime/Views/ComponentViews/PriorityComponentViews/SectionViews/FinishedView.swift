@@ -12,7 +12,7 @@ struct FinishedView: View {
 
     @FetchRequest(
         entity: PriorityItem.entity(),
-        sortDescriptors: [],
+        sortDescriptors: prioritySortDescriptors,
         predicate: NSPredicate(format: "priorityIsChecked == true"),
         animation: .default)
     
@@ -24,6 +24,7 @@ struct FinishedView: View {
                 ForEach(priorities, id: \.self) {
                     priority in
                     ListCardView(
+                        priorityObject: priority,
                         priorityTitle: priority.priorityTitle!,
                         priorityDate: priority.priorityFinishedDate!,
                         priorityUrgencyLevel: priority.priorityUrgencyLevel!,

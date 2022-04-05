@@ -13,7 +13,7 @@ struct PointView: View {
     
     public var body: some View {
         Text(priorityPoint < 10 ? "0\(priorityPoint)Pts": "\(priorityPoint)Pts")
-            .font(.title2)
+            .font(.title3)
             .fontWeight(.semibold)
             .foregroundColor(isChecked ? .gray : .red)
             .multilineTextAlignment(.trailing)

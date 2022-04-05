@@ -10,6 +10,8 @@ import SwiftUI
 struct ListCardView: View {
     // Environments
     @Environment(\.editMode) private var editMode
+    
+    var priorityObject: PriorityItem
 
     // Sheets
     @State public var showEditSheetView : Bool = false
@@ -19,27 +21,50 @@ struct ListCardView: View {
     public var priorityDate: Date;
     public var priorityUrgencyLevel: String;
     public var priorityPoints: Int;
-    
+
     // Card check states
     @State public var isChecked: Bool = false
     
     public var body: some View {
         HStack(alignment: .center) {
             if editMode?.wrappedValue.isEditing != true {
-                CheckBoxView(isChecked: $isChecked)
+                withAnimation {
+                    CheckBoxView(isChecked: $isChecked, priorityObject: priorityObject).transition(.scale)
+                }
             }
+            
             CardDetailView(
                 priorityTitle: priorityTitle,
                 priorityDate: priorityDate,
                 priorityUrgencyLevel: priorityUrgencyLevel,
                 isChecked: $isChecked
-            ).background(Color(UIColor.systemBackground))
+            )
+//            .background(Color(UIColor.systemBackground))
             Spacer()
-            PointView(isChecked: $isChecked, priorityPoint: priorityPoints)
+
+            if editMode?.wrappedValue.isEditing == true {
+                withAnimation {
+                    Button(action: showEditSheet) {
+                        Image(systemName: "info.circle")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.blue)
+                            .transition(.scale)
+                            .multilineTextAlignment(.trailing)
+                    }.onTapGesture {
+                        showEditSheet()
+                    }
+                }
+            } else {
+                PointView(isChecked: $isChecked, priorityPoint: priorityPoints)
+                    .multilineTextAlignment(.trailing)
+            }
+            
         }
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
         .sheet(isPresented: $showEditSheetView) {
             EditPrioritySheetView(
+                priorityItem: priorityObject,
                 urgencyLevelIndex: 0,
                 showSheetView: $showEditSheetView,
                 namaPrioritas: priorityTitle,
@@ -48,6 +73,11 @@ struct ListCardView: View {
                 poinSelesai: priorityPoints)
         }
         .padding(.vertical, 5.0)
+        
+    }
+    
+    func showEditSheet() {
+        showEditSheetView = true
     }
 }
 //
