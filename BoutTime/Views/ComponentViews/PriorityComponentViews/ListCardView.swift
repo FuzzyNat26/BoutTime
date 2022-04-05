@@ -27,6 +27,7 @@ struct ListCardView: View {
                 withAnimation {
                     CheckBoxView(isChecked: $isChecked, priorityObject: priorityObject)
                         .transition(.scale)
+                        .padding(.trailing, 9)
                 }
             }
             

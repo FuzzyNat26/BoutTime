@@ -22,10 +22,10 @@ struct PointScreen: View {
     private var priorities: FetchedResults<PriorityItem>
     
     // ICON NAME
-    let iconName: String = "star.fill";
+//    let iconName: String = "star.fill";
+    @AppStorage("UserIcon") var iconName: String = "star.fill"
     
     // VARIABLES
-    // TODO: BUAT INFORMASI SECARA INSTANT
     @State var totalSelesai: Int = 0;
     @State var totalBelumSelesai: Int = 0;
     @State var totalPoin: Int = 0;
@@ -36,27 +36,18 @@ struct PointScreen: View {
         }.reduce(0){
             $0 + Int($1.priorityPoint)
         }
-        
-//       return totalPoin
     }
-
-
-//    func countTotalBelumSelesai() -> Int{
-        func countTotalBelumSelesai(){
+    func countTotalBelumSelesai(){
         totalBelumSelesai = priorities.filter{
             $0.priorityIsChecked == false
         }.count
-        
-//        return totalBelumSelesai
     }
-
-//    func countTotalSelesai() -> Int {
+    
     func countTotalSelesai() {
         totalSelesai = priorities.filter{
             $0.priorityIsChecked == true
         }.count
         
-//        return totalSelesai
     }
     
     // SHEET STATE
@@ -104,13 +95,11 @@ struct PointScreen: View {
                         HStack {
                             Text("Total Selesai");
                             Spacer()
-//                            Text(String(countTotalSelesai())).foregroundColor(.gray)
                             Text(String(totalSelesai)).foregroundColor(.gray)
                         }
                         HStack {
                             Text("Total Belum Selesai")
                             Spacer()
-//                            Text(String(countTotalBelumSelesai())).foregroundColor(.gray);
                             Text(String(totalBelumSelesai)).foregroundColor(.gray);
                         }
                         HStack {
@@ -140,7 +129,9 @@ struct PointScreen: View {
                 EditPointSheetView(
                     showSheetView: $showEditSheetView,
                     nama: userName,
-                    selectedColorKey: colorKey)
+                    selectedColorKey: colorKey,
+                    selectedIcon: iconName
+                )
             }.onAppear{
                 sumTotalPoin()
                 countTotalBelumSelesai()

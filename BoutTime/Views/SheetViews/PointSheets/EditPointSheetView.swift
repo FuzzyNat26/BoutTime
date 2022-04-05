@@ -14,11 +14,13 @@ struct EditPointSheetView: View {
     // VARIABLES
     @State var nama: String;
     @State var selectedColorKey: Int;
+    @State var selectedIcon: String;
     
     // SAVE PAGE INFORMATION TO USER DEFAULTS
     func saveProfile() {
         UserDefaults.standard.set(nama, forKey: "UserName");
         UserDefaults.standard.set(selectedColorKey, forKey: "UserColorKey")
+        UserDefaults.standard.set(selectedIcon, forKey: "UserIcon")
     }
     
     var body: some View {
@@ -36,6 +38,17 @@ struct EditPointSheetView: View {
                         VStack(alignment: .center) {
                             HStack(alignment: .center) {
                                 ColorPickerView(selectedColorKey: $selectedColorKey)
+                            }
+                        }
+                        .padding(.vertical, 2.0)
+                        
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                    }
+                    
+                    Section("Pilih icon untuk profil") {
+                        VStack(alignment: .center) {
+                            HStack(alignment: .center) {
+                                IconPickerView(selectedIcon: $selectedIcon)
                             }
                         }
                         .padding(.vertical, 2.0)
