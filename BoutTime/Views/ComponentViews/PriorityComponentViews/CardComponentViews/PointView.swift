@@ -16,12 +16,14 @@ struct PointView: View {
     
     public var body: some View {
         // JIKA BUKAN 10, TAMBAHKAN 0 DI DEPAN
-        
-        // TODO: PISAHKAN DAN TAMBAHKAN PTS
-        Text(priorityPoint != 10 ? "0\(priorityPoint)Pts": "\(priorityPoint)Pts")
-            .font(.title3)
-            .fontWeight(.semibold)
-            .foregroundColor(isChecked ? .gray : .red)
-            .multilineTextAlignment(.trailing)
+        HStack(alignment: .firstTextBaseline, spacing: 0) {
+            Text(priorityPoint != 10 ? "0\(priorityPoint)": "\(priorityPoint)")
+                .font(.title3)
+                .fontWeight(.semibold)
+                .multilineTextAlignment(.trailing)
+            Text(" Pts")
+                .fontWeight(.medium)
+                .font(.caption)
+        }.foregroundColor(isChecked ? .gray : .red)
     }
 }

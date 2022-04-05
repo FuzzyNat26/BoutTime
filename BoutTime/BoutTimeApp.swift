@@ -21,7 +21,7 @@ struct BoutTimeApp: App {
                 PointScreen()
                     .tabItem {
                         Label("Poin", systemImage: "checkmark.seal.fill")
-                    }
+                    }.environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
         }
     }

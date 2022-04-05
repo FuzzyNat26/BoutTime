@@ -17,11 +17,10 @@ struct CardDetailView: View {
     @Binding public var isChecked: Bool;
     
     public var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 4) {
             Text(priorityTitle)
                 .lineLimit(1)
                 .foregroundColor(isChecked == true ? .secondary : .primary)
-                .padding(.bottom, 0.05)
             Text("\(priorityUrgencyLevel) - \(priorityDate, style: .date)")
                 .lineLimit(1)
                 .font(.caption)

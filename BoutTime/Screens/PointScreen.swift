@@ -12,14 +12,52 @@ struct PointScreen: View {
     @AppStorage("UserColorKey") var colorKey: Int = 0
     @AppStorage("UserName") var userName: String = "User"
     
+    // CONTEXT
+    @FetchRequest(
+        entity: PriorityItem.entity(),
+        sortDescriptors: []
+    )
+    
+    // PRIORITY OBJECTS (PRIORITY COLLECTIONS)
+    private var priorities: FetchedResults<PriorityItem>
+    
     // ICON NAME
     let iconName: String = "star.fill";
     
     // VARIABLES
     // TODO: BUAT INFORMASI SECARA INSTANT
-    var totalSelesai: Int = 10;
-    var totalBelumSelesai: Int = 9;
-    var totalPoints: Int = 76;
+    @State var totalSelesai: Int = 0;
+    @State var totalBelumSelesai: Int = 0;
+    @State var totalPoin: Int = 0;
+    
+    func sumTotalPoin(){
+        totalPoin = priorities.filter{
+            $0.priorityIsChecked == true
+        }.reduce(0){
+            $0 + Int($1.priorityPoint)
+        }
+        
+//       return totalPoin
+    }
+
+
+//    func countTotalBelumSelesai() -> Int{
+        func countTotalBelumSelesai(){
+        totalBelumSelesai = priorities.filter{
+            $0.priorityIsChecked == false
+        }.count
+        
+//        return totalBelumSelesai
+    }
+
+//    func countTotalSelesai() -> Int {
+    func countTotalSelesai() {
+        totalSelesai = priorities.filter{
+            $0.priorityIsChecked == true
+        }.count
+        
+//        return totalSelesai
+    }
     
     // SHEET STATE
     @State var showEditSheetView: Bool = false;
@@ -49,7 +87,7 @@ struct PointScreen: View {
                         }
                         .clipShape(Circle())
                         VStack(alignment: .leading) {
-                            Text("\(thousandSeperators(points: totalPoints)) Pts")
+                            Text("\(thousandSeperators(points: totalPoin)) Pts")
                                 .bold()
                                 .font(.title)
                                 .foregroundColor(colorConstants[colorKey])
@@ -66,17 +104,26 @@ struct PointScreen: View {
                         HStack {
                             Text("Total Selesai");
                             Spacer()
-                            Text(String(totalSelesai)).foregroundColor(.gray);
+//                            Text(String(countTotalSelesai())).foregroundColor(.gray)
+                            Text(String(totalSelesai)).foregroundColor(.gray)
                         }
                         HStack {
                             Text("Total Belum Selesai")
                             Spacer()
+//                            Text(String(countTotalBelumSelesai())).foregroundColor(.gray);
                             Text(String(totalBelumSelesai)).foregroundColor(.gray);
                         }
                         HStack {
                             Text("Poin Rata-Rata")
                             Spacer()
-                            Text(String(Float(totalPoints) / Float(totalSelesai))).foregroundColor(.gray);
+                            Text(
+                                String(
+                                    totalSelesai != 0
+                                    ? Float(totalPoin) / Float(totalSelesai)
+                                    : Float(0)
+                                )
+                            )
+                            .foregroundColor(.gray);
                         }
                     }
                 }
@@ -94,6 +141,10 @@ struct PointScreen: View {
                     showSheetView: $showEditSheetView,
                     nama: userName,
                     selectedColorKey: colorKey)
+            }.onAppear{
+                sumTotalPoin()
+                countTotalBelumSelesai()
+                countTotalSelesai()
             }
         }
     }
