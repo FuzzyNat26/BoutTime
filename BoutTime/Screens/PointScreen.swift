@@ -22,7 +22,6 @@ struct PointScreen: View {
     private var priorities: FetchedResults<PriorityItem>
     
     // ICON NAME
-//    let iconName: String = "star.fill";
     @AppStorage("UserIcon") var iconName: String = "star.fill"
     
     // VARIABLES
@@ -37,6 +36,7 @@ struct PointScreen: View {
             $0 + Int($1.priorityPoint)
         }
     }
+    
     func countTotalBelumSelesai(){
         totalBelumSelesai = priorities.filter{
             $0.priorityIsChecked == false

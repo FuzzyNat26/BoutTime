@@ -32,6 +32,7 @@
 		7C10CE2A27FAFA7F00E9C782 /* PriorityItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2827FAFA7F00E9C782 /* PriorityItem+CoreDataClass.swift */; };
 		7C10CE2B27FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2927FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift */; };
 		7C10CE2E27FB1C5C00E9C782 /* TrimString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2D27FB1C5C00E9C782 /* TrimString.swift */; };
+		7C40375427FD7A5E00E542CB /* SortConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40375327FD7A5E00E542CB /* SortConstants.swift */; };
 		7C9248CF27FBECAC00FFBA3F /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248CE27FBECAC00FFBA3F /* Transition.swift */; };
 		7C9248D127FBFED800FFBA3F /* PrioritySortDescriptiors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */; };
 		7C9248D527FC530B00FFBA3F /* ProfileIconList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248D427FC530B00FFBA3F /* ProfileIconList.swift */; };
@@ -67,6 +68,7 @@
 		7C10CE2827FAFA7F00E9C782 /* PriorityItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriorityItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7C10CE2927FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriorityItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7C10CE2D27FB1C5C00E9C782 /* TrimString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimString.swift; sourceTree = "<group>"; };
+		7C40375327FD7A5E00E542CB /* SortConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortConstants.swift; sourceTree = "<group>"; };
 		7C9248CE27FBECAC00FFBA3F /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritySortDescriptiors.swift; sourceTree = "<group>"; };
 		7C9248D427FC530B00FFBA3F /* ProfileIconList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIconList.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				7C10CDF227FAD66E00E9C782 /* ColorConstants.swift */,
 				7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */,
 				7C9248D427FC530B00FFBA3F /* ProfileIconList.swift */,
+				7C40375327FD7A5E00E542CB /* SortConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				7C9248D927FC55A000FFBA3F /* IconPickerView.swift in Sources */,
 				7C10CE0A27FAD79400E9C782 /* EditPointSheetView.swift in Sources */,
 				7C10CE2B27FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift in Sources */,
+				7C40375427FD7A5E00E542CB /* SortConstants.swift in Sources */,
 				7C10CE1827FAD9F800E9C782 /* ListCardView.swift in Sources */,
 				7C10CE1327FAD95800E9C782 /* CardDetailView.swift in Sources */,
 				7C10CE0827FAD78600E9C782 /* EditPrioritySheetView.swift in Sources */,
@@ -540,6 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BoutTime/Preview Content\"";
@@ -549,6 +554,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -569,6 +575,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BoutTime/Preview Content\"";
@@ -578,6 +585,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

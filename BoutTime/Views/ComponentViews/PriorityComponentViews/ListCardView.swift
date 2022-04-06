@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ListCardView: View {
-    
     // EDIT MODE VARIABLES
     @Binding var isEdit: Bool;
     

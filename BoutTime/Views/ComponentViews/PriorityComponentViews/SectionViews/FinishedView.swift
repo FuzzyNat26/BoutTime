@@ -11,15 +11,21 @@ struct FinishedView: View {
     // CONTEXT
     @Environment(\.managedObjectContext) private var viewContext
     
-    // FETCH REQUEST
-    @FetchRequest(
-        entity: PriorityItem.entity(),
-        sortDescriptors: prioritySortDescriptors,
-        predicate: NSPredicate(format: "priorityIsChecked == true"),
-        animation: .default)
+    var sortByIndex: Int;
     
     // PRIORITY OBJECTS (PRIORITY COLLECTIONS)
-    private var priorities: FetchedResults<PriorityItem>
+    @FetchRequest var priorities: FetchedResults<PriorityItem>
+    
+    init(sortByIndex: Int, isEdit: Binding<Bool>) {
+        self.sortByIndex = sortByIndex
+        self._isEdit = isEdit
+        
+        _priorities = FetchRequest<PriorityItem>(
+            sortDescriptors: prioritySortDescriptors[sortByIndex],
+            predicate: NSPredicate(format: "priorityIsChecked == true"),
+            animation: .default
+        )
+    }
     
     // EDIT MODE
     @Binding var isEdit: Bool;
