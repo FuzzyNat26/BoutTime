@@ -18,10 +18,12 @@ struct BoutTimeApp: App {
                     .tabItem {
                         Label("Prioritas", systemImage: "list.bullet")
                     }.environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tag(0)
                 PointScreen()
                     .tabItem {
                         Label("Poin", systemImage: "checkmark.seal.fill")
                     }.environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tag(1)
             }
         }
     }

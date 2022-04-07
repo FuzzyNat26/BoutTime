@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct PointScreen: View {
+    // COLOR ENVIRONMENT (LIGHT MODE DARK MODE)
+    @Environment(\.colorScheme) var colorScheme
+    
     // APPSTORAGE
     @AppStorage("UserColorKey") var colorKey: Int = 0
     @AppStorage("UserName") var userName: String = "User"
@@ -25,9 +28,24 @@ struct PointScreen: View {
     @AppStorage("UserIcon") var iconName: String = "star.fill"
     
     // VARIABLES
-    @State var totalSelesai: Int = 0;
-    @State var totalBelumSelesai: Int = 0;
-    @State var totalPoin: Int = 0;
+    @State private var totalSelesai: Int = 0;
+    @State private var totalBelumSelesai: Int = 0;
+    @State private var totalPoin: Int = 0;
+    @State private var levelUser: Int = 1;
+    
+    @State private var startFrom: Int = 0;
+    @State private var endFrom: Int = 100;
+    
+    func setStartEnd() {
+        let result = hitungLevelUser(totalPoin: totalPoin)
+        print(result)
+        
+        levelUser = result[0]
+        print(levelUser)
+        
+        startFrom = result[1]
+        endFrom = result[2]
+    }
     
     func sumTotalPoin(){
         totalPoin = priorities.filter{
@@ -56,42 +74,35 @@ struct PointScreen: View {
     var body: some View {
         NavigationView {
             VStack {
-                Form {
-                    HStack(alignment: .center) {
-                        ZStack {
-                            Circle()
-                                .fill(
-                                    RadialGradient(
-                                        gradient: Gradient(
-                                            colors: [
-                                                colorConstants[colorKey] ?? .black,
-                                                .white]),
-                                        center: .bottom,
-                                        startRadius: 1,
-                                        endRadius: 200
-                                    )
-                                )
-                                .frame(width: 80, height: 80)
-                            Image(systemName: iconName)
-                                .font(.system(size: 35))
-                                .foregroundColor(.white)
-                        }
-                        .clipShape(Circle())
-                        VStack(alignment: .leading) {
-                            Text("\(thousandSeperators(points: totalPoin)) Pts")
-                                .bold()
-                                .font(.title)
-                                .foregroundColor(colorConstants[colorKey])
-                                .multilineTextAlignment(.trailing)
-                            Text(userName)
-                                .font(.title3)
-                                .multilineTextAlignment(.trailing)
-                                .lineLimit(1)
-                        }
-                        .padding(.leading)
-                    }.padding(.vertical, 15.0)
-                    
-                    Section {
+                List {
+                    Section(
+                        header:
+                            HStack(alignment: .center) {
+                                VStack(alignment: .center, spacing: 8) {
+                                    ProgressBarView(
+                                        levelUser: $levelUser,
+                                        totalPoin: totalPoin,
+                                        startFrom: startFrom,
+                                        endFrom: endFrom,
+                                        colorKey: colorKey,
+                                        iconName: iconName
+                                    ).padding(.bottom)
+                                    
+                                    Text("\(userName) - Level \(levelUser)")
+                                        .font(.title3)
+                                        .multilineTextAlignment(.trailing)
+                                        .lineLimit(1)
+                                    Text("\(thousandSeperators(points: totalPoin)) Pts")
+                                        .bold()
+                                        .font(.title)
+                                        .foregroundColor(colorConstants[colorKey])
+                                        .multilineTextAlignment(.trailing)
+                                    
+                                }
+                                .padding(.vertical)
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                            }
+                    ) {
                         HStack {
                             Text("Total Selesai");
                             Spacer()
@@ -116,27 +127,39 @@ struct PointScreen: View {
                         }
                     }
                 }
+                .onAppear(perform: {
+                    UITableView.appearance().contentInset.top = -25
+                }
+                )
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Edit") {
                             showEditSheetView = true;
                         }
                     }
-                }
+                }.listStyle(InsetGroupedListStyle())
             }
-            .navigationBarTitle(Text("Poin"))
+            
+            .background(colorScheme == .light ? Color(UIColor.secondarySystemBackground) : Color(UIColor.black))
+//            .navigationBarTitle(Text("Poin"))
+            .navigationBarTitle(Text("\(levelUser)"))
             .sheet(isPresented: $showEditSheetView) {
                 EditPointSheetView(
                     showSheetView: $showEditSheetView,
                     nama: userName,
                     selectedColorKey: colorKey,
-                    selectedIcon: iconName
+                    selectedIcon: iconName,
+                    levelUser: levelUser
                 )
-            }.onAppear{
-                sumTotalPoin()
-                countTotalBelumSelesai()
-                countTotalSelesai()
             }
+        }.onAppear{
+            print("Current", levelUser)
+            sumTotalPoin()
+            setStartEnd()
+            
+            print("After", levelUser)
+            countTotalBelumSelesai()
+            countTotalSelesai()
         }
     }
 }

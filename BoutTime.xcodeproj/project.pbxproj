@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0FCEB727FDE66B000C35B9 /* ProfileIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FCEB627FDE66B000C35B9 /* ProfileIconView.swift */; };
+		7C0FCEBA27FDE755000C35B9 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FCEB927FDE755000C35B9 /* IconView.swift */; };
 		7C10CDCB27FAD42100E9C782 /* BoutTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CDCA27FAD42100E9C782 /* BoutTimeApp.swift */; };
 		7C10CDCF27FAD42200E9C782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C10CDCE27FAD42200E9C782 /* Assets.xcassets */; };
 		7C10CDD227FAD42200E9C782 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C10CDD127FAD42200E9C782 /* Preview Assets.xcassets */; };
@@ -33,6 +35,9 @@
 		7C10CE2B27FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2927FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift */; };
 		7C10CE2E27FB1C5C00E9C782 /* TrimString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2D27FB1C5C00E9C782 /* TrimString.swift */; };
 		7C40375427FD7A5E00E542CB /* SortConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40375327FD7A5E00E542CB /* SortConstants.swift */; };
+		7C676A1D27FE70B7001532CA /* UserLevelConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C676A1C27FE70B7001532CA /* UserLevelConstants.swift */; };
+		7C74B34B27FE9CDB00E3AC1E /* MinMaxConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C74B34A27FE9CDB00E3AC1E /* MinMaxConverter.swift */; };
+		7C74B35027FEADA400E3AC1E /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C74B34F27FEADA400E3AC1E /* ProgressBarView.swift */; };
 		7C9248CF27FBECAC00FFBA3F /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248CE27FBECAC00FFBA3F /* Transition.swift */; };
 		7C9248D127FBFED800FFBA3F /* PrioritySortDescriptiors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */; };
 		7C9248D527FC530B00FFBA3F /* ProfileIconList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248D427FC530B00FFBA3F /* ProfileIconList.swift */; };
@@ -42,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C0FCEB627FDE66B000C35B9 /* ProfileIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIconView.swift; sourceTree = "<group>"; };
+		7C0FCEB927FDE755000C35B9 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		7C10CDC727FAD42100E9C782 /* BoutTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C10CDCA27FAD42100E9C782 /* BoutTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutTimeApp.swift; sourceTree = "<group>"; };
 		7C10CDCE27FAD42200E9C782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +76,9 @@
 		7C10CE2927FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriorityItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7C10CE2D27FB1C5C00E9C782 /* TrimString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimString.swift; sourceTree = "<group>"; };
 		7C40375327FD7A5E00E542CB /* SortConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortConstants.swift; sourceTree = "<group>"; };
+		7C676A1C27FE70B7001532CA /* UserLevelConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelConstants.swift; sourceTree = "<group>"; };
+		7C74B34A27FE9CDB00E3AC1E /* MinMaxConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxConverter.swift; sourceTree = "<group>"; };
+		7C74B34F27FEADA400E3AC1E /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		7C9248CE27FBECAC00FFBA3F /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritySortDescriptiors.swift; sourceTree = "<group>"; };
 		7C9248D427FC530B00FFBA3F /* ProfileIconList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIconList.swift; sourceTree = "<group>"; };
@@ -88,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C0FCEB827FDE749000C35B9 /* ProfileIcon */ = {
+			isa = PBXGroup;
+			children = (
+				7C0FCEB627FDE66B000C35B9 /* ProfileIconView.swift */,
+				7C0FCEB927FDE755000C35B9 /* IconView.swift */,
+				7C74B34F27FEADA400E3AC1E /* ProgressBarView.swift */,
+			);
+			path = ProfileIcon;
+			sourceTree = "<group>";
+		};
 		7C10CDBE27FAD42100E9C782 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +194,7 @@
 				7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */,
 				7C9248D427FC530B00FFBA3F /* ProfileIconList.swift */,
 				7C40375327FD7A5E00E542CB /* SortConstants.swift */,
+				7C676A1C27FE70B7001532CA /* UserLevelConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -234,6 +255,7 @@
 		7C10CDEB27FAD4F400E9C782 /* PointComponentViews */ = {
 			isa = PBXGroup;
 			children = (
+				7C0FCEB827FDE749000C35B9 /* ProfileIcon */,
 				7C9248D727FC558900FFBA3F /* IconPicker */,
 				7C9248D627FC558100FFBA3F /* ColorPicker */,
 			);
@@ -289,6 +311,7 @@
 			children = (
 				7C10CE2D27FB1C5C00E9C782 /* TrimString.swift */,
 				7C9248CE27FBECAC00FFBA3F /* Transition.swift */,
+				7C74B34A27FE9CDB00E3AC1E /* MinMaxConverter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -397,6 +420,7 @@
 				7C10CDF327FAD66E00E9C782 /* ColorConstants.swift in Sources */,
 				7C10CDEF27FAD62D00E9C782 /* NumberFormatter.swift in Sources */,
 				7C9248D527FC530B00FFBA3F /* ProfileIconList.swift in Sources */,
+				7C676A1D27FE70B7001532CA /* UserLevelConstants.swift in Sources */,
 				7C10CE1127FAD94900E9C782 /* CheckBoxView.swift in Sources */,
 				7C10CE0027FAD75000E9C782 /* AddPrioritySheetView.swift in Sources */,
 				7C10CDFE27FAD73700E9C782 /* PrioritiesScreen.swift in Sources */,
@@ -404,7 +428,9 @@
 				7C9248D127FBFED800FFBA3F /* PrioritySortDescriptiors.swift in Sources */,
 				7C9248CF27FBECAC00FFBA3F /* Transition.swift in Sources */,
 				7C10CE2E27FB1C5C00E9C782 /* TrimString.swift in Sources */,
+				7C0FCEBA27FDE755000C35B9 /* IconView.swift in Sources */,
 				7C9248DB27FC55B000FFBA3F /* IconCircle.swift in Sources */,
+				7C0FCEB727FDE66B000C35B9 /* ProfileIconView.swift in Sources */,
 				7C9248D927FC55A000FFBA3F /* IconPickerView.swift in Sources */,
 				7C10CE0A27FAD79400E9C782 /* EditPointSheetView.swift in Sources */,
 				7C10CE2B27FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift in Sources */,
@@ -419,6 +445,8 @@
 				7C10CE0F27FAD8A100E9C782 /* ColorCircle.swift in Sources */,
 				7C10CE1B27FADA2300E9C782 /* OnProgressView.swift in Sources */,
 				7C10CE0C27FAD87C00E9C782 /* ColorPickerView.swift in Sources */,
+				7C74B34B27FE9CDB00E3AC1E /* MinMaxConverter.swift in Sources */,
+				7C74B35027FEADA400E3AC1E /* ProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,17 +11,16 @@ struct IconPickerView: View {
     // SELECTED ICON KEY BINDING
     @Binding var selectedIcon: String;
     
+    var levelUser: Int;
+    
     var body: some View {
         // FOREACH CONSTANTS IN SYSTEMNAMELIST
         ForEach(profileIconList, id: \.self) { icon in
-            ZStack {
-                IconCircle(
-                    thisIcon: icon,
-                    selectedIcon: $selectedIcon
-                )
-            }.onTapGesture {
-                selectedIcon = icon
-            }
+            IconCircle(
+                thisIcon: icon,
+                levelUser : levelUser,
+                selectedIcon: $selectedIcon
+            )
             
             // IF ICON NOT THE LAST, THEN ADD SPACER()
             if (icon != profileIconList.last) {
