@@ -31,20 +31,20 @@ struct PointScreen: View {
     @State private var totalSelesai: Int = 0;
     @State private var totalBelumSelesai: Int = 0;
     @State private var totalPoin: Int = 0;
-    @State private var levelUser: Int = 1;
+    @StateObject var levelObserver = LevelObserver()
     
     @State private var startFrom: Int = 0;
     @State private var endFrom: Int = 100;
     
     func setStartEnd() {
+        // [levelUser, startFrom, endFrom] : <Int>
         let result = hitungLevelUser(totalPoin: totalPoin)
-        print(result)
-        
-        levelUser = result[0]
-        print(levelUser)
         
         startFrom = result[1]
         endFrom = result[2]
+        
+        let levelUser = result[0]
+        levelObserver.setLevel(level: levelUser)
     }
     
     func sumTotalPoin(){
@@ -80,7 +80,7 @@ struct PointScreen: View {
                             HStack(alignment: .center) {
                                 VStack(alignment: .center, spacing: 8) {
                                     ProgressBarView(
-                                        levelUser: $levelUser,
+                                        levelUser: levelObserver.levelUser,
                                         totalPoin: totalPoin,
                                         startFrom: startFrom,
                                         endFrom: endFrom,
@@ -88,7 +88,7 @@ struct PointScreen: View {
                                         iconName: iconName
                                     ).padding(.bottom)
                                     
-                                    Text("\(userName) - Level \(levelUser)")
+                                    Text("\(userName) - Level \(levelObserver.levelUser)")
                                         .font(.title3)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(1)
@@ -141,23 +141,20 @@ struct PointScreen: View {
             }
             
             .background(colorScheme == .light ? Color(UIColor.secondarySystemBackground) : Color(UIColor.black))
-//            .navigationBarTitle(Text("Poin"))
-            .navigationBarTitle(Text("\(levelUser)"))
+            .navigationBarTitle(Text("Poin"))
             .sheet(isPresented: $showEditSheetView) {
                 EditPointSheetView(
                     showSheetView: $showEditSheetView,
                     nama: userName,
                     selectedColorKey: colorKey,
                     selectedIcon: iconName,
-                    levelUser: levelUser
+                    levelUser: levelObserver.levelUser
                 )
             }
         }.onAppear{
-            print("Current", levelUser)
             sumTotalPoin()
             setStartEnd()
             
-            print("After", levelUser)
             countTotalBelumSelesai()
             countTotalSelesai()
         }

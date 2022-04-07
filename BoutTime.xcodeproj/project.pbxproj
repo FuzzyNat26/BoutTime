@@ -38,6 +38,7 @@
 		7C676A1D27FE70B7001532CA /* UserLevelConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C676A1C27FE70B7001532CA /* UserLevelConstants.swift */; };
 		7C74B34B27FE9CDB00E3AC1E /* MinMaxConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C74B34A27FE9CDB00E3AC1E /* MinMaxConverter.swift */; };
 		7C74B35027FEADA400E3AC1E /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C74B34F27FEADA400E3AC1E /* ProgressBarView.swift */; };
+		7C74B35727FF149400E3AC1E /* LevelObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C74B35627FF149400E3AC1E /* LevelObserver.swift */; };
 		7C9248CF27FBECAC00FFBA3F /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248CE27FBECAC00FFBA3F /* Transition.swift */; };
 		7C9248D127FBFED800FFBA3F /* PrioritySortDescriptiors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */; };
 		7C9248D527FC530B00FFBA3F /* ProfileIconList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248D427FC530B00FFBA3F /* ProfileIconList.swift */; };
@@ -79,6 +80,7 @@
 		7C676A1C27FE70B7001532CA /* UserLevelConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelConstants.swift; sourceTree = "<group>"; };
 		7C74B34A27FE9CDB00E3AC1E /* MinMaxConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxConverter.swift; sourceTree = "<group>"; };
 		7C74B34F27FEADA400E3AC1E /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		7C74B35627FF149400E3AC1E /* LevelObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelObserver.swift; sourceTree = "<group>"; };
 		7C9248CE27FBECAC00FFBA3F /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		7C9248D027FBFED800FFBA3F /* PrioritySortDescriptiors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritySortDescriptiors.swift; sourceTree = "<group>"; };
 		7C9248D427FC530B00FFBA3F /* ProfileIconList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIconList.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		7C10CDDD27FAD44A00E9C782 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7C74B35527FF148800E3AC1E /* Observables */,
 				7C10CE2C27FB1C5000E9C782 /* Extensions */,
 				7C10CDE427FAD48500E9C782 /* Formatters */,
 				7C10CDE227FAD47800E9C782 /* Constants */,
@@ -316,6 +319,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		7C74B35527FF148800E3AC1E /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				7C74B35627FF149400E3AC1E /* LevelObserver.swift */,
+			);
+			path = Observables;
+			sourceTree = "<group>";
+		};
 		7C9248D627FC558100FFBA3F /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +429,7 @@
 				7C10CDF127FAD65E00E9C782 /* PriorityConstants.swift in Sources */,
 				7C10CE1D27FADA2E00E9C782 /* FinishedView.swift in Sources */,
 				7C10CDF327FAD66E00E9C782 /* ColorConstants.swift in Sources */,
+				7C74B35727FF149400E3AC1E /* LevelObserver.swift in Sources */,
 				7C10CDEF27FAD62D00E9C782 /* NumberFormatter.swift in Sources */,
 				7C9248D527FC530B00FFBA3F /* ProfileIconList.swift in Sources */,
 				7C676A1D27FE70B7001532CA /* UserLevelConstants.swift in Sources */,

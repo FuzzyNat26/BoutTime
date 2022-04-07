@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProgressBarView: View {
-    @Binding var levelUser: Int
+    @State var levelUser: Int
 
     var totalPoin: Int
     var startFrom: Int
@@ -41,14 +41,5 @@ struct ProgressBarView: View {
             }
             IconView(colorKey: colorKey, iconName: iconName)
         }
-        .onAppear() {
-            levelUser = totalPoin / 100 + 1
-        }
     }
 }
-
-//struct ProgressBarView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProgressBarView()
-//    }
-//}
