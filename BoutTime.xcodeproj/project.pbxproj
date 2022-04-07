@@ -115,7 +115,6 @@
 		7C10CDBE27FAD42100E9C782 = {
 			isa = PBXGroup;
 			children = (
-				7C74B35827FF21AE00E3AC1E /* icon-assets */,
 				7C10CE2227FAF7A800E9C782 /* DataClass */,
 				7C10CDC927FAD42100E9C782 /* BoutTime */,
 				7C10CDC827FAD42100E9C782 /* Products */,
@@ -133,8 +132,8 @@
 		7C10CDC927FAD42100E9C782 /* BoutTime */ = {
 			isa = PBXGroup;
 			children = (
+				7C74B35827FF21AE00E3AC1E /* icon-assets */,
 				7C9248DC27FC5B2000FFBA3F /* LaunchScreen */,
-				7C10CDF827FAD6FB00E9C782 /* Data */,
 				7C10CDDF27FAD45700E9C782 /* Views */,
 				7C10CDDE27FAD45000E9C782 /* Screens */,
 				7C10CDDD27FAD44A00E9C782 /* Utils */,
@@ -178,6 +177,7 @@
 		7C10CDDF27FAD45700E9C782 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C10CDF827FAD6FB00E9C782 /* Data */,
 				7C10CDE927FAD4E200E9C782 /* ComponentViews */,
 				7C10CDE627FAD4B000E9C782 /* SheetViews */,
 			);
