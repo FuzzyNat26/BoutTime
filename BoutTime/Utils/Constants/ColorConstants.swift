@@ -14,3 +14,11 @@ let colorConstants = [
     3: Color.blue,
     4: Color.orange
 ]
+
+let checkboxColorConstants = [
+    0: Color.red,
+    1: Color.orange,
+    2: Color.yellow,
+    3: Color.cyan,
+    4: Color.blue
+]

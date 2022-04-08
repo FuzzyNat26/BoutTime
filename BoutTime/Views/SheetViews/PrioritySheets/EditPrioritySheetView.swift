@@ -85,7 +85,7 @@ struct EditPrioritySheetView: View {
             .navigationBarTitle(Text("Ubah Prioritas"), displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
+                    Button("Selesai") {
                         updatePriority()
                         self.presentationMode.wrappedValue.dismiss()
                     }.disabled(namaPrioritas.trimmingLeadingAndTrailingSpaces().isEmpty)

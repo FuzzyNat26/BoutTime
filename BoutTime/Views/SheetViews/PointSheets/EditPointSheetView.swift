@@ -13,16 +13,14 @@ struct EditPointSheetView: View {
     
     // VARIABLES
     @State var nama: String;
-//    @State var selectedColorKey: Int;
-//    @State var selectedIcon: String;
+    @State var selectedColorKey: Int;
     
     var levelUser: Int;
     
     // SAVE PAGE INFORMATION TO USER DEFAULTS
     func saveProfile() {
         UserDefaults.standard.set(nama, forKey: "UserName");
-//        UserDefaults.standard.set(selectedColorKey, forKey: "UserColorKey")
-//        UserDefaults.standard.set(selectedIcon, forKey: "UserIcon")
+        UserDefaults.standard.set(selectedColorKey, forKey: "UserColorKey")
     }
     
     var body: some View {
@@ -36,39 +34,27 @@ struct EditPointSheetView: View {
                         ).modifier(TextClearField(text: $nama))
                     }
                     
-//                    Section("Pilih warna untuk profil") {
-//                        VStack(alignment: .center) {
-//                            HStack(alignment: .center) {
-//                                ColorPickerView(selectedColorKey: $selectedColorKey, levelUser: levelUser)
-//                            }
-//                        }
-//                        .padding(.vertical, 2.0)
-//
-//                        .frame(minWidth: 0, maxWidth: .infinity)
-//                    }
-//
-//                    Section("Pilih icon untuk profil") {
-//                        VStack(alignment: .center) {
-//                            HStack(alignment: .center) {
-//                                IconPickerView(selectedIcon: $selectedIcon, levelUser: levelUser)
-//                            }
-//                        }
-//                        .padding(.vertical, 2.0)
-//
-//                        .frame(minWidth: 0, maxWidth: .infinity)
-//                    }
+                    Section("Warna kotak centang (checkbox)") {
+                        VStack(alignment: .center) {
+                            HStack(alignment: .center) {
+                                ColorPickerView(selectedColorKey: $selectedColorKey, levelUser: levelUser)
+                            }
+                        }
+                        .padding(.vertical, 2.0)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                    }
                 }
                 
                 Spacer()
             }
             .edgesIgnoringSafeArea(.bottom)
-            .navigationBarTitle(Text("Ubah Profil"), displayMode: .inline)
+            .navigationBarTitle(Text("Ubah Preferensi"), displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Simpan") {
+                    Button("Selesai") {
                         saveProfile()
                         showSheetView = false;
-                    }
+                    }.disabled(nama.trimmingLeadingAndTrailingSpaces().isEmpty)
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {

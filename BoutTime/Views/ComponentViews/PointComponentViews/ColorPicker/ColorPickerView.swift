@@ -18,14 +18,14 @@ struct ColorPickerView: View {
         // FOREACH CONSTANTS IN COLORCONSTANTS
         // SORT BY 0 - ..., CREATE COLORCIRCLE VIEW WITH KEY
         // AND SELECTED COLOR KEY BINDING
-        ForEach(Array(colorConstants.keys).sorted(by: <), id: \.self) { key in
+        ForEach(Array(checkboxColorConstants.keys).sorted(by: <), id: \.self) { key in
             ColorCircle(
                 key: key,
                 levelUser : levelUser,
                 selectedColorKey: $selectedColorKey
             )
             // IF COLOR CONSTANTS NOT THE LAST, THEN ADD SPACER()
-            if (key != colorConstants.count - 1) {
+            if (key != checkboxColorConstants.count - 1) {
                 Spacer()
             }
         }

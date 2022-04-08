@@ -23,30 +23,17 @@ struct ColorCircle: View {
         ZStack {
             // OUTER CIRCLE (IF SELECTED, OPACITY 1)
             Circle()
-                .strokeBorder(colorConstants[key] ?? .black,
+                .strokeBorder(checkboxColorConstants[key] ?? .black,
                               lineWidth: 3)
                 .frame(width: 45, height: 45)
                 .opacity(selectedColorKey == key ? 1 : 0)
-            
-            if(checkColorLock(levelUser: levelUser, colorKey: key)) {
-                // OUTER CIRCLE BUKAN UNTUK PILIH
-                Circle()
-                    .fill(colorScheme == .light ? Color(UIColor.secondarySystemBackground) : Color(UIColor.darkGray))
-                    .frame(width: 34, height: 34)
-                
-                Image(systemName: "lock.fill")
-                    .foregroundColor(colorScheme == .light ? .gray : .white)
-                    .frame(width: 32, height: 32)
-            } else {
+
                 // INNER STATIC CIRCLE
                 Circle()
-                    .foregroundColor(colorConstants[key])
+                    .foregroundColor(checkboxColorConstants[key])
                     .frame(width: 32, height: 32)
-            }
         }.onTapGesture {
-            if(!checkColorLock(levelUser: levelUser, colorKey: key)) {
-                selectedColorKey = key
-            }
+            selectedColorKey = key
         }
     }
 }

@@ -14,7 +14,7 @@ struct PrioritiesScreen: View {
     @State var selectedSortIndex: Int = 0;
     
     init() {
-        @AppStorage("UserSortBy") var sortByName: String = "Points"
+        @AppStorage("UserSortBy") var sortByName: String = "Poin"
         
         _selectedSortItem = State(initialValue: sortByName)
         _selectedSortIndex = State(initialValue : sortByConstants.firstIndex(where: {$0 == sortByName})!)

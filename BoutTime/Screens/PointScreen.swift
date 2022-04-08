@@ -12,7 +12,7 @@ struct PointScreen: View {
     @Environment(\.colorScheme) var colorScheme
     
     // APPSTORAGE
-//    @AppStorage("UserColorKey") var colorKey: Int = 0
+    @AppStorage("UserColorKey") var colorKey: Int = 0
     @AppStorage("UserName") var userName: String = "User"
     
     // CONTEXT
@@ -32,7 +32,6 @@ struct PointScreen: View {
     @State private var totalBelumSelesai: Int = 0;
     @State private var totalPoin: Int = 0;
     
-//    @StateObject var levelObserver = LevelObserver()
     @EnvironmentObject var levelObserver: LevelObserver
     
     @State private var startFrom: Int = 0;
@@ -148,7 +147,7 @@ struct PointScreen: View {
                 EditPointSheetView(
                     showSheetView: $showEditSheetView,
                     nama: userName,
-//                    selectedColorKey: colorKey,
+                    selectedColorKey: colorKey,
 //                    selectedIcon: iconName,
                     levelUser: levelObserver.levelUser
                 )
