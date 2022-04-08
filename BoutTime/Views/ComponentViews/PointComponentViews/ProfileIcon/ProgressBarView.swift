@@ -40,6 +40,6 @@ struct ProgressBarView: View {
                 
             }
             IconView(colorKey: colorKey, iconName: iconName)
-        }
+        }.padding(.bottom)
     }
 }

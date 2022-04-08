@@ -11,6 +11,9 @@ struct CheckBoxView: View {
     // CHECKBOX BINDING
     @Binding public var isChecked: Bool
     
+    // APP STORAGE
+    @AppStorage("UserColorKey") var colorKey: Int = 0
+    
     // ENVIRONMENT CONTEXT : FOR UPDATING CHECKBOX
     @Environment(\.managedObjectContext) private var viewContext
     
@@ -41,7 +44,7 @@ struct CheckBoxView: View {
                 .resizable()
                 .foregroundColor(
                     isChecked
-                    ? .red
+                    ? colorConstants[colorKey]
                     : .gray
                 )
                 .frame(width: 22, height: 22)

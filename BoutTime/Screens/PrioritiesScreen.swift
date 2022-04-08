@@ -90,7 +90,7 @@ struct PrioritiesScreen: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationBarTitle(Text("Priorities"))
+            .navigationBarTitle(Text("Prioritas"))
             .environment(
                 \.editMode,
                  .constant(self.isEdit ? EditMode.active : EditMode.inactive)

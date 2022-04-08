@@ -86,18 +86,18 @@ struct PointScreen: View {
                                         endFrom: endFrom,
                                         colorKey: colorKey,
                                         iconName: iconName
-                                    ).padding(.bottom)
+                                    )
                                     
                                     Text("\(userName) - Level \(levelObserver.levelUser)")
-                                        .font(.title3)
+                                        .font(.headline)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(1)
+                                        .textCase(nil)
                                     Text("\(thousandSeperators(points: totalPoin)) Pts")
                                         .bold()
                                         .font(.title)
                                         .foregroundColor(colorConstants[colorKey])
                                         .multilineTextAlignment(.trailing)
-                                    
                                 }
                                 .padding(.vertical)
                                 .frame(minWidth: 0, maxWidth: .infinity)
