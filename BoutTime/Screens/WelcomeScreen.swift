@@ -20,7 +20,7 @@ struct WelcomeScreen: View {
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundColor(.red)
-                Text("Aplikasi pencatatan prioritas dengan gamifikasi guna meningkatkan motivasi dan kedisiplinan ")
+                Text("Aplikasi pencatatan prioritas dengan gamifikasi guna meningkatkan motivasi dan kedisiplinan.")
                     .padding(.top, 1)
             }
             .frame(minWidth:0,  maxWidth: .infinity)
