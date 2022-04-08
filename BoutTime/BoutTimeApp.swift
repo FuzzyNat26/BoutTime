@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct BoutTimeApp: App {
+    @AppStorage("firstTimeOpenTheApp") var firstTimeOpenTheApp: Bool = true
+    
     let persistenceController = PersistenceController.shared
     
     var body: some Scene {
@@ -24,6 +26,12 @@ struct BoutTimeApp: App {
                     }.environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
             .environmentObject(LevelObserver())
+            .fullScreenCover(
+                isPresented: $firstTimeOpenTheApp,
+                onDismiss: {UserDefaults.standard.set(false, forKey: "firstTimeOpenTheApp")}
+            ) {
+                WelcomeScreen()
+            }
         }
     }
 }

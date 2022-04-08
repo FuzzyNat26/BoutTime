@@ -34,6 +34,7 @@
 		7C10CE2A27FAFA7F00E9C782 /* PriorityItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2827FAFA7F00E9C782 /* PriorityItem+CoreDataClass.swift */; };
 		7C10CE2B27FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2927FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift */; };
 		7C10CE2E27FB1C5C00E9C782 /* TrimString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10CE2D27FB1C5C00E9C782 /* TrimString.swift */; };
+		7C25376228004ED20036DF7E /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C25376128004ED20036DF7E /* WelcomeScreen.swift */; };
 		7C40375427FD7A5E00E542CB /* SortConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C40375327FD7A5E00E542CB /* SortConstants.swift */; };
 		7C676A1D27FE70B7001532CA /* UserLevelConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C676A1C27FE70B7001532CA /* UserLevelConstants.swift */; };
 		7C74B34B27FE9CDB00E3AC1E /* MinMaxConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C74B34A27FE9CDB00E3AC1E /* MinMaxConverter.swift */; };
@@ -77,6 +78,7 @@
 		7C10CE2827FAFA7F00E9C782 /* PriorityItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriorityItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7C10CE2927FAFA7F00E9C782 /* PriorityItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriorityItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7C10CE2D27FB1C5C00E9C782 /* TrimString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimString.swift; sourceTree = "<group>"; };
+		7C25376128004ED20036DF7E /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		7C40375327FD7A5E00E542CB /* SortConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortConstants.swift; sourceTree = "<group>"; };
 		7C676A1C27FE70B7001532CA /* UserLevelConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelConstants.swift; sourceTree = "<group>"; };
 		7C74B34A27FE9CDB00E3AC1E /* MinMaxConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxConverter.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				7C10CDFB27FAD72200E9C782 /* PointScreen.swift */,
 				7C10CDFD27FAD73700E9C782 /* PrioritiesScreen.swift */,
+				7C25376128004ED20036DF7E /* WelcomeScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				7C10CDCB27FAD42100E9C782 /* BoutTimeApp.swift in Sources */,
 				7C10CDF527FAD6A700E9C782 /* ClearTextField.swift in Sources */,
 				7C10CDFC27FAD72200E9C782 /* PointScreen.swift in Sources */,
+				7C25376228004ED20036DF7E /* WelcomeScreen.swift in Sources */,
 				7C10CE0F27FAD8A100E9C782 /* ColorCircle.swift in Sources */,
 				7C10CE1B27FADA2300E9C782 /* OnProgressView.swift in Sources */,
 				7C10CE0C27FAD87C00E9C782 /* ColorPickerView.swift in Sources */,
