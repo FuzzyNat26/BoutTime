@@ -8,9 +8,12 @@
 import SwiftUI
 
 class LevelObserver: ObservableObject {
-    @Published var levelUser = 0
+    @Published var levelUser = 1
+    
+    @Published var colorKey = 1
     
     func setLevel(level: Int) {
         levelUser = level
+        colorKey = level - 1
     }
 }

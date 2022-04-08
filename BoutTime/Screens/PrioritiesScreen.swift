@@ -63,7 +63,7 @@ struct PrioritiesScreen: View {
                             }
                         label: {
                             Label(title: {
-                                Text("Sort by (\(selectedSortItem))")
+                                Text("Urutkan Menurut (\(selectedSortItem))")
                             }) {
                                 Image(systemName: "arrow.up.arrow.down")
                             }

@@ -41,13 +41,13 @@ struct AddPrioritySheetView: View {
                     
                     Section {
                         DatePicker(
-                            "Tanggal",
+                            "Tanggal Selesai",
                             selection: $tanggalSelesai,
                             displayedComponents: [.date]
                         )
                         
                         Picker(
-                            "Tingkat urgensi",
+                            "Tingkat Urgensi",
                             selection: $tingkatUrgensi
                         )
                         {
@@ -78,14 +78,14 @@ struct AddPrioritySheetView: View {
             .navigationBarTitle(Text("Tambah Prioritas"), displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Add") {
+                    Button("Tambah") {
                         addPriority();
                         self.presentationMode.wrappedValue.dismiss()
                     }.disabled(namaPrioritas.trimmingLeadingAndTrailingSpaces().isEmpty)
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button("Batalkan") {
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }

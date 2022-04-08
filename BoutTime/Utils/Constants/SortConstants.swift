@@ -8,12 +8,8 @@
 import Foundation
 
 let sortByConstants = [
-    "Points",
-    "Title",
-    "Finished Date",
-    "Created Date"
+    "Poin",
+    "Judul",
+    "Tanggal Selesai",
+    "Tanggal Pembuatan"
 ]
-
-//let orderConstants = [
-//    ""
-//]

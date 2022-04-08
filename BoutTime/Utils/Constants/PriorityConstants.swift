@@ -8,11 +8,11 @@
 import Foundation
 
 let daftarTingkatUrgensi = [
-    "Really Low", //biru
-    "Low", //cyan
-    "Medium", //kuning
-    "High", //oren
-    "Really High" //merah
+    "Sangat Rendah", //biru
+    "Rendah", //cyan
+    "Sedang", //kuning
+    "Tinggi", //oren
+    "Sangat Tinggi" //merah
 ]
 
 let priorityPoint = [

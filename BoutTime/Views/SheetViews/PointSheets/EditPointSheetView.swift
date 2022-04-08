@@ -13,16 +13,16 @@ struct EditPointSheetView: View {
     
     // VARIABLES
     @State var nama: String;
-    @State var selectedColorKey: Int;
-    @State var selectedIcon: String;
+//    @State var selectedColorKey: Int;
+//    @State var selectedIcon: String;
     
     var levelUser: Int;
     
     // SAVE PAGE INFORMATION TO USER DEFAULTS
     func saveProfile() {
         UserDefaults.standard.set(nama, forKey: "UserName");
-        UserDefaults.standard.set(selectedColorKey, forKey: "UserColorKey")
-        UserDefaults.standard.set(selectedIcon, forKey: "UserIcon")
+//        UserDefaults.standard.set(selectedColorKey, forKey: "UserColorKey")
+//        UserDefaults.standard.set(selectedIcon, forKey: "UserIcon")
     }
     
     var body: some View {
@@ -36,27 +36,27 @@ struct EditPointSheetView: View {
                         ).modifier(TextClearField(text: $nama))
                     }
                     
-                    Section("Pilih warna untuk profil") {
-                        VStack(alignment: .center) {
-                            HStack(alignment: .center) {
-                                ColorPickerView(selectedColorKey: $selectedColorKey, levelUser: levelUser)
-                            }
-                        }
-                        .padding(.vertical, 2.0)
-                        
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                    }
-                    
-                    Section("Pilih icon untuk profil") {
-                        VStack(alignment: .center) {
-                            HStack(alignment: .center) {
-                                IconPickerView(selectedIcon: $selectedIcon, levelUser: levelUser)
-                            }
-                        }
-                        .padding(.vertical, 2.0)
-                        
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                    }
+//                    Section("Pilih warna untuk profil") {
+//                        VStack(alignment: .center) {
+//                            HStack(alignment: .center) {
+//                                ColorPickerView(selectedColorKey: $selectedColorKey, levelUser: levelUser)
+//                            }
+//                        }
+//                        .padding(.vertical, 2.0)
+//
+//                        .frame(minWidth: 0, maxWidth: .infinity)
+//                    }
+//
+//                    Section("Pilih icon untuk profil") {
+//                        VStack(alignment: .center) {
+//                            HStack(alignment: .center) {
+//                                IconPickerView(selectedIcon: $selectedIcon, levelUser: levelUser)
+//                            }
+//                        }
+//                        .padding(.vertical, 2.0)
+//
+//                        .frame(minWidth: 0, maxWidth: .infinity)
+//                    }
                 }
                 
                 Spacer()
@@ -65,14 +65,14 @@ struct EditPointSheetView: View {
             .navigationBarTitle(Text("Ubah Profil"), displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
+                    Button("Simpan") {
                         saveProfile()
                         showSheetView = false;
                     }
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button("Batalkan") {
                         showSheetView = false;
                     }
                 }

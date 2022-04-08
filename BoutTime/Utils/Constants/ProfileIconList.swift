@@ -8,10 +8,18 @@
 import Foundation
 
 let profileIconList = [
+    // HIJO
     "leaf.fill", // Leaflet yang baru tumbuh untuk mencari tujuan.
-//    "drop.fill", // Air yang supply dirimu untuk maju ke depan. Tetapi, hanya air tidak bisa membantu apa-apa
+    
+    // RED
     "sun.max.fill", // Matahari yang siap mendukung pertumbuhan.
+    
+    // PURPLE BLUE
     "moon.fill", // Selamanya matahari tidak cukup, tetapi perlu dibarengi dengan balance.
+    
+    // BLUE
     "star.fill", // Untuk mencapai cita-cita atau dream seperti bintang.
+    
+    // OREN
     "sparkles" // yang sparkle terus menerus
 ]

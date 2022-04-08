@@ -12,7 +12,10 @@ struct CheckBoxView: View {
     @Binding public var isChecked: Bool
     
     // APP STORAGE
-    @AppStorage("UserColorKey") var colorKey: Int = 0
+//    @AppStorage("UserColorKey") var colorKey: Int = 0
+    
+//    @StateObject var levelObserver = LevelObserver()
+    @EnvironmentObject var levelObserver: LevelObserver
     
     // ENVIRONMENT CONTEXT : FOR UPDATING CHECKBOX
     @Environment(\.managedObjectContext) private var viewContext
@@ -37,6 +40,7 @@ struct CheckBoxView: View {
     var body: some View {
         Button(action: toggle){
             HStack{
+                Text("\(levelObserver.levelUser)")
                 Image(systemName:
                         isChecked
                       ? "checkmark.circle.fill"
@@ -44,7 +48,7 @@ struct CheckBoxView: View {
                 .resizable()
                 .foregroundColor(
                     isChecked
-                    ? colorConstants[colorKey]
+                    ? colorConstants[levelObserver.colorKey]
                     : .gray
                 )
                 .frame(width: 22, height: 22)

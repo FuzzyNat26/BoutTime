@@ -47,13 +47,13 @@ struct EditPrioritySheetView: View {
                     
                     Section {
                         DatePicker(
-                            "Tanggal",
+                            "Tanggal Selesai",
                             selection: $tanggalSelesai,
                             displayedComponents: [.date]
                         )
                         
                         Picker(
-                            "Tingkat urgensi",
+                            "Tingkat Urgensi",
                             selection: $tingkatUrgensi
                         )
                         {
@@ -92,7 +92,7 @@ struct EditPrioritySheetView: View {
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button("Batalkan") {
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }

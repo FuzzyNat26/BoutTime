@@ -12,7 +12,7 @@ struct PointScreen: View {
     @Environment(\.colorScheme) var colorScheme
     
     // APPSTORAGE
-    @AppStorage("UserColorKey") var colorKey: Int = 0
+//    @AppStorage("UserColorKey") var colorKey: Int = 0
     @AppStorage("UserName") var userName: String = "User"
     
     // CONTEXT
@@ -31,7 +31,9 @@ struct PointScreen: View {
     @State private var totalSelesai: Int = 0;
     @State private var totalBelumSelesai: Int = 0;
     @State private var totalPoin: Int = 0;
-    @StateObject var levelObserver = LevelObserver()
+    
+//    @StateObject var levelObserver = LevelObserver()
+    @EnvironmentObject var levelObserver: LevelObserver
     
     @State private var startFrom: Int = 0;
     @State private var endFrom: Int = 100;
@@ -84,8 +86,8 @@ struct PointScreen: View {
                                         totalPoin: totalPoin,
                                         startFrom: startFrom,
                                         endFrom: endFrom,
-                                        colorKey: colorKey,
-                                        iconName: iconName
+                                        colorKey: levelObserver.colorKey,
+                                        iconName: profileIconList[levelObserver.levelUser - 1]
                                     )
                                     
                                     Text("\(userName) - Level \(levelObserver.levelUser)")
@@ -96,7 +98,7 @@ struct PointScreen: View {
                                     Text("\(thousandSeperators(points: totalPoin)) Pts")
                                         .bold()
                                         .font(.title)
-                                        .foregroundColor(colorConstants[colorKey])
+                                        .foregroundColor(colorConstants[levelObserver.colorKey])
                                         .multilineTextAlignment(.trailing)
                                 }
                                 .padding(.vertical)
@@ -119,7 +121,7 @@ struct PointScreen: View {
                             Text(
                                 String(
                                     totalSelesai != 0
-                                    ? Float(totalPoin) / Float(totalSelesai)
+                                    ? round(Float(totalPoin) / Float(totalSelesai) * 100) / 100
                                     : Float(0)
                                 )
                             )
@@ -146,8 +148,8 @@ struct PointScreen: View {
                 EditPointSheetView(
                     showSheetView: $showEditSheetView,
                     nama: userName,
-                    selectedColorKey: colorKey,
-                    selectedIcon: iconName,
+//                    selectedColorKey: colorKey,
+//                    selectedIcon: iconName,
                     levelUser: levelObserver.levelUser
                 )
             }

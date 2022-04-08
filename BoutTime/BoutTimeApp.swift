@@ -23,6 +23,7 @@ struct BoutTimeApp: App {
                         Label("Poin", systemImage: "checkmark.seal.fill")
                     }.environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
+            .environmentObject(LevelObserver())
         }
     }
 }
