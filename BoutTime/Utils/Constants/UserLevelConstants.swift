@@ -47,23 +47,23 @@ func checkIconLock(levelUser: Int, systemName: String) -> Bool {
     var result: Bool = true;
     
     switch(systemName) {
-    case "star.fill":
+    case profileIconList[0]:
         if(levelUser >= 1) {
             result = false
         }
-    case "moon.fill":
+    case profileIconList[1]:
         if(levelUser >= 2) {
             result = false
         }
-    case "sparkles":
+    case profileIconList[2]:
         if(levelUser >= 3) {
             result = false
         }
-    case "leaf.fill":
+    case profileIconList[3]:
         if(levelUser >= 4) {
             result = false
         }
-    case "heart.fill":
+    case profileIconList[4]:
         if(levelUser >= 5) {
             result = false
         }

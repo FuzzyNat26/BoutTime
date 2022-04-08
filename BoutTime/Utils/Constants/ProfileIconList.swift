@@ -8,9 +8,10 @@
 import Foundation
 
 let profileIconList = [
-    "star.fill",
-    "moon.fill",
-    "sparkles",
-    "leaf.fill",
-    "heart.fill",
+    "leaf.fill", // Leaflet yang baru tumbuh untuk mencari tujuan.
+//    "drop.fill", // Air yang supply dirimu untuk maju ke depan. Tetapi, hanya air tidak bisa membantu apa-apa
+    "sun.max.fill", // Matahari yang siap mendukung pertumbuhan.
+    "moon.fill", // Selamanya matahari tidak cukup, tetapi perlu dibarengi dengan balance.
+    "star.fill", // Untuk mencapai cita-cita atau dream seperti bintang.
+    "sparkles" // yang sparkle terus menerus
 ]

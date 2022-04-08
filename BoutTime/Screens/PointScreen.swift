@@ -25,7 +25,7 @@ struct PointScreen: View {
     private var priorities: FetchedResults<PriorityItem>
     
     // ICON NAME
-    @AppStorage("UserIcon") var iconName: String = "star.fill"
+    @AppStorage("UserIcon") var iconName: String = "leaf.fill"
     
     // VARIABLES
     @State private var totalSelesai: Int = 0;
