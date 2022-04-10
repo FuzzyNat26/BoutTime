@@ -91,14 +91,24 @@ struct PointScreen: View {
                                     
                                     Text("\(userName) - Level \(levelObserver.levelUser)")
                                         .font(.headline)
+                                        .foregroundColor(colorScheme == .light ? Color.black : Color.white)
                                         .multilineTextAlignment(.trailing)
                                         .lineLimit(1)
                                         .textCase(nil)
-                                    Text("\(thousandSeperators(points: totalPoin)) Pts")
-                                        .bold()
-                                        .font(.title)
-                                        .foregroundColor(colorConstants[levelObserver.colorKey])
-                                        .multilineTextAlignment(.trailing)
+                                    VStack {
+                                        Text("\(thousandSeperators(points: totalPoin)) Pts")
+                                            .bold()
+                                            .font(.title)
+                                            .foregroundColor(colorConstants[levelObserver.colorKey])
+                                            .multilineTextAlignment(.trailing)
+                                        Text(
+                                            totalPoin > 1000
+                                            ? "Level maksimal tercapai"
+                                            : "Butuh \(thousandSeperators(points: endFrom)) poin untuk naik level")
+                                            .foregroundColor(.gray)
+                                            .multilineTextAlignment(.trailing)
+                                            .textCase(nil)
+                                    }
                                 }
                                 .padding(.vertical)
                                 .frame(minWidth: 0, maxWidth: .infinity)
