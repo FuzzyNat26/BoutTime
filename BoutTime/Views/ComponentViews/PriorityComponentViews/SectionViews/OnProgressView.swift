@@ -51,17 +51,17 @@ struct OnProgressView: View {
             // LOOP THROUGH OFFSETS AND DELETE THOSE INDEXES
             offsets.map { priorities[$0] }.forEach(viewContext.delete)
             
-            let index = offsets.map{$0}[0]
-            
-            UNUserNotificationCenter
-                .current()
-                .removePendingNotificationRequests(
-                    withIdentifiers: [
-                        priorities[index].priorityId!.uuidString
-                    ]
-                )
-            
             do {
+                let index = offsets.map{$0}[0]
+                
+                UNUserNotificationCenter
+                    .current()
+                    .removePendingNotificationRequests(
+                        withIdentifiers: [
+                            priorities[index].priorityId!.uuidString
+                        ]
+                    )
+                
                 try viewContext.save()
             } catch {
                 // AUTO GENERATED CODE BY CORE DATA
