@@ -51,13 +51,24 @@ struct OnProgressView: View {
             // LOOP THROUGH OFFSETS AND DELETE THOSE INDEXES
             offsets.map { priorities[$0] }.forEach(viewContext.delete)
             
+            let index = offsets.map{$0}[0]
+            
+            UNUserNotificationCenter
+                .current()
+                .removePendingNotificationRequests(
+                    withIdentifiers: [
+                        priorities[index].priorityId!.uuidString
+                    ]
+                )
+            
             do {
                 try viewContext.save()
             } catch {
                 // AUTO GENERATED CODE BY CORE DATA
                 
                 // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                // fatalError() causes the application to generate a crash log and terminate.
+                // You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }

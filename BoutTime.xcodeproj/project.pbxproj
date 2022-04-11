@@ -47,6 +47,7 @@
 		7C9248D927FC55A000FFBA3F /* IconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248D827FC55A000FFBA3F /* IconPickerView.swift */; };
 		7C9248DB27FC55B000FFBA3F /* IconCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9248DA27FC55B000FFBA3F /* IconCircle.swift */; };
 		7C9248DE27FC5B3100FFBA3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9248DD27FC5B3100FFBA3F /* LaunchScreen.storyboard */; };
+		7CC2585528032CA100557FDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC2585428032CA100557FDD /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		7C9248D827FC55A000FFBA3F /* IconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerView.swift; sourceTree = "<group>"; };
 		7C9248DA27FC55B000FFBA3F /* IconCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCircle.swift; sourceTree = "<group>"; };
 		7C9248DD27FC5B3100FFBA3F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7CC2585428032CA100557FDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				7C10CDCE27FAD42200E9C782 /* Assets.xcassets */,
 				7C10CDD327FAD42200E9C782 /* Persistence.swift */,
 				7C10CDD027FAD42200E9C782 /* Preview Content */,
+				7CC2585428032CA100557FDD /* AppDelegate.swift */,
 			);
 			path = BoutTime;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				7C10CE0027FAD75000E9C782 /* AddPrioritySheetView.swift in Sources */,
 				7C10CDFE27FAD73700E9C782 /* PrioritiesScreen.swift in Sources */,
 				7C10CE1627FAD96500E9C782 /* PointView.swift in Sources */,
+				7CC2585528032CA100557FDD /* AppDelegate.swift in Sources */,
 				7C9248D127FBFED800FFBA3F /* PrioritySortDescriptiors.swift in Sources */,
 				7C9248CF27FBECAC00FFBA3F /* Transition.swift in Sources */,
 				7C10CE2E27FB1C5C00E9C782 /* TrimString.swift in Sources */,

@@ -49,6 +49,7 @@ struct EditPrioritySheetView: View {
                         DatePicker(
                             "Tanggal Selesai",
                             selection: $tanggalSelesai,
+                            in: Date()...,
                             displayedComponents: [.date]
                         )
                         
@@ -113,5 +114,51 @@ struct EditPrioritySheetView: View {
             priorityItem.priorityUrgencyLevel    = tingkatUrgensi
             try? viewContext.save()
         }
+        
+        UNUserNotificationCenter
+            .current()
+            .removePendingNotificationRequests(
+                withIdentifiers: [priorityItem.priorityId!.uuidString]
+            )
+        
+        addNotification(uuid: priorityItem.priorityId!, contentBody: namaPrioritas)
+    }
+    
+    func addNotification(uuid: UUID, contentBody: String) {
+        //TODO: Step 2a - Content Creation
+        let content = UNMutableNotificationContent()
+        content.title = "BoutTime - Tanggal Mendekati!"
+        content.body = contentBody
+
+        //TODO: Step 2b - Trigger the notification
+        var hariNotifikasi = Calendar.current.date(
+            byAdding: .hour,
+            value: -6,
+            to: tanggalSelesai
+        )
+        
+        if(Calendar.current.isDateInToday(tanggalSelesai)) {
+            hariNotifikasi = Calendar.current.date(
+                byAdding: .hour,
+                value: 2,
+                to: tanggalSelesai)
+        }
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching:
+                Calendar.current.dateComponents(
+                [.day, .month, .year, .hour, .minute],
+                from: hariNotifikasi!),
+            repeats: false)
+
+        //TODO: Step 2c - Add content & trigger to the request
+        let request = UNNotificationRequest(
+            identifier: uuid.uuidString,
+            content: content,
+            trigger: trigger
+        )
+
+        //TODO: Step 2d - Add request to notification center
+        UNUserNotificationCenter.current().add(request)
     }
 }

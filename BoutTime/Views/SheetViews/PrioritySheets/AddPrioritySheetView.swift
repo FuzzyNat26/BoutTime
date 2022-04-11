@@ -43,6 +43,7 @@ struct AddPrioritySheetView: View {
                         DatePicker(
                             "Tanggal Selesai",
                             selection: $tanggalSelesai,
+                            in: Date()...,
                             displayedComponents: [.date]
                         )
                         
@@ -96,6 +97,8 @@ struct AddPrioritySheetView: View {
     func addPriority() {
         guard self.namaPrioritas != "" else {return}
         
+        let uuid = UUID()
+        
         let newPriority = PriorityItem(context: viewContext)
         newPriority.priorityCreatedDate     = Date.now
         newPriority.priorityFinishedDate    = tanggalSelesai
@@ -103,14 +106,53 @@ struct AddPrioritySheetView: View {
         newPriority.priorityPoint           = Int32(poinSelesai)
         newPriority.priorityTitle           = namaPrioritas
         newPriority.priorityUrgencyLevel    = tingkatUrgensi
-        newPriority.priorityId = UUID()
+        newPriority.priorityId = uuid
+        
+        addNotification(uuid: uuid, contentBody: namaPrioritas)
         
         do {
             try viewContext.save()
-            print("Priorty saved.")
             presentationMode.wrappedValue.dismiss()
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func addNotification(uuid: UUID, contentBody: String) {
+        //TODO: Step 2a - Content Creation
+        let content = UNMutableNotificationContent()
+        content.title = "BoutTime - Tanggal Mendekati!"
+        content.body = contentBody
+
+        //TODO: Step 2b - Trigger the notification
+        var hariNotifikasi = Calendar.current.date(
+            byAdding: .hour,
+            value: -6,
+            to: tanggalSelesai
+        )
+        
+        if(Calendar.current.isDateInToday(tanggalSelesai)) {
+            hariNotifikasi = Calendar.current.date(
+                byAdding: .hour,
+                value: 2,
+                to: tanggalSelesai)
+        }
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching:
+                Calendar.current.dateComponents(
+                [.day, .month, .year, .hour, .minute],
+                from: hariNotifikasi!),
+            repeats: false)
+
+        //TODO: Step 2c - Add content & trigger to the request
+        let request = UNNotificationRequest(
+            identifier: uuid.uuidString,
+            content: content,
+            trigger: trigger
+        )
+
+        //TODO: Step 2d - Add request to notification center
+        UNUserNotificationCenter.current().add(request)
     }
 }

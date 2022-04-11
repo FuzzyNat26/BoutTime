@@ -98,7 +98,6 @@ struct PrioritiesScreen: View {
             .animation(.default, value: isEdit)
             
         }.sheet(isPresented: $showAddSheetView, onDismiss: {
-            print("Dismissed")
         }) {
             AddPrioritySheetView(showSheetView: $showAddSheetView)
         }
